@@ -1,0 +1,110 @@
+require:
+  - rubocop-capybara
+  - rubocop-factory_bot
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "bin/bundle"
+    - "Capfile"
+    - "config/**/*"
+    - "db/schema.rb"
+    - "db/migrate/*"
+    - "Gemfile"
+    - "Gemfile.lock"
+    - "node_modules/**/*"
+    - "spec/rails_helper.rb"
+    - "spec/spec_helper.rb"
+
+FactoryBot/AssociationStyle:
+  EnforcedStyle: "explicit"
+
+Layout/LineLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Exclude:
+    - 'db/migrate/*'
+
+Metrics/MethodLength:
+  CountAsOne: ['array', 'heredoc', 'method_call', 'hash']
+  Max: 15
+  Exclude:
+    - 'db/migrate/*'
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/Output:
+  Enabled: false
+
+RSpec/ContextWording:
+  Prefixes:
+    - for
+    - For
+    - given
+    - Given
+    - if
+    - If
+    - unless
+    - Unless
+    - when
+    - When
+    - with
+    - With
+    - without
+    - Without
+
+RSpec/DescribedClass:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/HookArgument:
+  EnforcedStyle: each
+
+RSpec/ImplicitSubject:
+  EnforcedStyle: single_statement_only
+
+RSpec/NestedGroups:
+  Max: 6
+
+RSpec/NotToNot:
+  Enabled: false
+
+RSpec/PredicateMatcher:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/SymbolArray:
+  Enabled: false
