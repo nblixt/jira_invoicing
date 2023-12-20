@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a demo project that will mock API requests to Jira's Tempo Time Tracking plugin to pull worklogs for invoicing
+projects in Jira.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[API for worklogs](https://apidocs.tempo.io/#tag/Worklogs/operation/getWorklogs)
