@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Homes", type: :feature do
+RSpec.feature "Home", type: :feature do
   describe "sign in" do
     context "Given the user has a user record" do
       before(:each) { stub_current_user_exists }
