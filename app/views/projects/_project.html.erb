@@ -1,0 +1,5 @@
+<tr id="<%= dom_id(project) %>">
+  <td><%= link_to project.key, project_path(project), id: project.key %></td>
+  <td><%= project.name %></td>
+  <td><%= render "project_status", project: project %></td>
+</tr>

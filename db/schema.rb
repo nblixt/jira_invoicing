@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_17_203958) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_22_123639) do
+  create_table "projects", force: :cascade do |t|
+    t.integer "jira_id", null: false
+    t.string "key"
+    t.string "name"
+    t.string "url"
+    t.boolean "archived"
+    t.boolean "deleted"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["jira_id"], name: "index_projects_on_jira_id", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "first_name"
@@ -18,6 +31,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_17_203958) do
     t.string "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_users_on_account_id", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end
