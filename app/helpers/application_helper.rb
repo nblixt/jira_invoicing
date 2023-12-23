@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def path_matches_current_path(path)
-    base_path = path.split("/").filter(&:present?).first
+    base_path = path.split("/").find(&:present?)
     if base_path
       current_path.include?(base_path)
     else

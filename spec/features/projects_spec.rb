@@ -1,16 +1,16 @@
 require "rails_helper"
 
-RSpec.describe "Projects", type: :feature do
+RSpec.describe "Projects" do
   describe "a user can view the projects index page" do
     context "Given an existing current_user" do
       before(:each) { stub_current_user_exists }
 
       it "displays the projects index page when clicking the Projects navbar link" do
         visit root_path
-        click_link_or_button("projects-navlink")
+        click_link("projects-navlink")
 
         aggregate_failures do
-          expect(page).to have_css("table#projects-table")
+          expect(page).to have_table("projects-table")
           expect(page).to have_current_path(projects_path)
         end
       end
@@ -25,7 +25,7 @@ RSpec.describe "Projects", type: :feature do
 
       it "displays the selected project page when clicking the project's key in the table" do
         visit projects_path
-        click_link_or_button("KEY")
+        click_link("KEY")
 
         aggregate_failures do
           expect(page).to have_content("Name [KEY]")

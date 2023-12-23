@@ -22,6 +22,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_22_123639) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["jira_id"], name: "index_projects_on_jira_id", unique: true
+    t.index ["key"], name: "index_projects_on_key", unique: true
+    t.index ["name"], name: "index_projects_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|

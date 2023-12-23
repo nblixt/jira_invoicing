@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Users", type: :feature do
+RSpec.describe "Users" do
   describe "index" do
     context "Given an existing current_user" do
       before(:each) { stub_current_user_exists }
