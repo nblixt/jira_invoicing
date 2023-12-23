@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.feature "Projects", type: :feature do
+RSpec.describe "Projects", type: :feature do
   describe "a user can view the projects index page" do
     context "Given an existing current_user" do
       before(:each) { stub_current_user_exists }
