@@ -1,0 +1,3 @@
+<%= content_tag :span, "Active", class: "badge bg-success" unless project.archived || project.deleted %>
+<%= content_tag :span, "Archived", class: "badge bg-secondary" if project.archived %>
+<%= content_tag :span, "Deleted", class: "badge bg-danger" if project.deleted %>

@@ -1,0 +1,12 @@
+<h1><%= @project.name %> [<%= @project.key %>]</h1>
+<section>
+  <div class="h4">
+    <%= render "project_status", project: @project %>
+  </div>
+  <div>Jira URL: <%= link_to @project.url %></div>
+  <div><%= @project.description %></div>
+</section>
+<section>
+  <h2>Invoices</h2>
+</section>
+

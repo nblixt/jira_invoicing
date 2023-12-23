@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find_by(username: ENV["STUB_USERNAME"]) # placeholder method until actually adding authentication mechanisms
+    @current_user ||= User.find_by(username: ENV.fetch("STUB_USERNAME", nil)) # placeholder method until actually adding authentication mechanisms
   end
 end
