@@ -1,0 +1,49 @@
+<nav class="navbar col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+  <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+    <%= link_to root_path, class: "d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none" do %>
+      <span class="fs-5 d-none d-sm-inline">Menu</span>
+    <% end %>
+    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="sidebar-menu">
+      <li class="nav-item">
+        <%= link_to root_path, class: "nav-link align-middle px-0 #{active_link(root_path)}", "aria-current": current_page(root_path) do %>
+          <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to projects_path, class: "nav-link align-middle px-0 #{active_link(projects_path)}", id: "projects-navlink", "aria-current": current_page(projects_path) do %>
+          <i class="fs-4 bi-card-text"></i> <span class="ms-1 d-none d-sm-inline">Projects</span>
+        <% end %>
+      </li>
+      <li>
+        <a href="#invoice-menu" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+          <i class="fs-4 bi-file-spreadsheet"></i> <span class="ms-1 d-none d-sm-inline">Invoices</span>
+        </a>
+        <ul class="collapse nav flex-column ms-1" id="invoice-menu" data-bs-parent="#sidebar-menu">
+          <li class="w-100">
+            <%= link_to "Current Invoices", "#", class: "nav-link px-0 #{active_link("#")}", "aria-current": current_page("#") %>
+          </li>
+          <li>
+            <%= link_to "Archived Invoices", "#", class: "nav-link px-0 #{active_link("#")}", "aria-current": current_page("#") %>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <%= link_to users_path, class: "nav-link px-0 align-middle #{active_link(users_path)}", id: "users-navlink", "aria-current": current_page(users_path) do %>
+          <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Users</span>
+        <% end %>
+      </li>
+    </ul>
+    <hr>
+    <div class="dropdown pb-4">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <!--            <img src="#" alt="#" width="30" height="30" class="rounded-circle"> Get profile image from Jira?-->
+        <span class="d-none d-sm-inline mx-1"><%= current_user.name %></span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><%= link_to "Profile", "#", class: "dropdown-item" %></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><%= link_to "Sign Out", "#", class: "dropdown-item" %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
